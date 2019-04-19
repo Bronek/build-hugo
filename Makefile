@@ -1,5 +1,6 @@
-# Note, 'v' version prefix added in --build-arg below
+# Note, 'v' version prefix added below
 VERSION = 0.54.0
+COMMIT := v$(VERSION)
 DOCKER ?= $(shell which docker)
 IIDFILE:= $(shell mktemp /var/tmp/XXXXXX.id)
 USERID  = $(shell id -u):$(shell id -g)
@@ -7,7 +8,7 @@ USERID  = $(shell id -u):$(shell id -g)
 default: copy
 
 build:
-	$(DOCKER) build --build-arg REF=v$(VERSION) -t build-hugo-$(USER) --iidfile $(IIDFILE) .
+	$(DOCKER) build --build-arg REF=$(COMMIT) -t build-hugo-$(USER) --iidfile $(IIDFILE) .
 
 clean:
 	rm -rf $(PWD)/dist
