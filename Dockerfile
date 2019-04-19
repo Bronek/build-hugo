@@ -5,9 +5,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /work
-ARG REF=master
-RUN git clone https://github.com/gohugoio/hugo.git
-
-WORKDIR /work/hugo
-RUN git checkout ${REF}
+ARG COMMIT=master
+RUN git clone https://github.com/gohugoio/hugo.git .
+RUN git checkout ${COMMIT}
 RUN go install --tags extended
