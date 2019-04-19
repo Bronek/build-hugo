@@ -1,6 +1,7 @@
 # Note, 'v' version prefix added below
 VERSION = 0.55.2
 COMMIT := v$(VERSION)
+GO_REL  = 1.12.3
 DOCKER ?= $(shell which docker)
 IIDFILE:= $(shell mktemp /var/tmp/XXXXXX.id)
 USERID  = $(shell id -u):$(shell id -g)
@@ -8,7 +9,7 @@ USERID  = $(shell id -u):$(shell id -g)
 default: copy
 
 build:
-	$(DOCKER) build --build-arg COMMIT=$(COMMIT) -t build-hugo-$(USER) --iidfile $(IIDFILE) .
+	$(DOCKER) build --build-arg GO_REL=$(GO_REL) --build-arg COMMIT=$(COMMIT) -t build-hugo-$(USER) --iidfile $(IIDFILE) .
 
 clean:
 	rm -rf $(PWD)/dist
