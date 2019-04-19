@@ -1,5 +1,5 @@
 # Note, 'v' version prefix added below
-VERSION = 0.54.0
+VERSION = 0.55.2
 COMMIT := v$(VERSION)
 DOCKER ?= $(shell which docker)
 IIDFILE:= $(shell mktemp /var/tmp/XXXXXX.id)
