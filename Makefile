@@ -1,5 +1,5 @@
 # Note, 'v' version prefix added below
-VERSION = 0.55.5
+VERSION = 0.56.3
 COMMIT := v$(VERSION)
 GO_REL  = 1.12.4
 DOCKER ?= $(shell which docker)
