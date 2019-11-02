@@ -1,7 +1,7 @@
 # Note, 'v' version prefix added below
 VERSION = 0.59.1
 COMMIT := v$(VERSION)
-GO_REL  = 1.13.3
+GO_REL  = 1.13.4
 DOCKER ?= $(shell which docker)
 IIDFILE:= $(shell mktemp /var/tmp/XXXXXX.id)
 USERID  = $(shell id -u):$(shell id -g)
