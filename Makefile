@@ -1,6 +1,6 @@
 # Note, 'v' version prefix added below
 VERSION = 0.62.2
-COMMIT := v$(VERSION)
+RELEASE:= v$(VERSION)
 GO_REL  = 1.13.6
 ifeq ($(origin DRIVER), undefined)
   ifneq ($(shell which podman 2>/dev/null || echo 0), 0)
@@ -17,7 +17,7 @@ USERID := $(shell id -u):$(shell id -g)
 default: copy
 
 build:
-	$(DRIVER) build --build-arg GO_REL=$(GO_REL) --build-arg COMMIT=$(COMMIT) -t build-hugo-$(USER) --iidfile $(IIDFILE) .
+	$(DRIVER) build --build-arg GO_REL=$(GO_REL) --build-arg RELEASE=$(RELEASE) -t build-hugo-$(USER) --iidfile $(IIDFILE) .
 
 clean:
 	rm -rf $(PWD)/dist
