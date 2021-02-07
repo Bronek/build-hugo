@@ -1,7 +1,7 @@
 # Note, 'v' version prefix added below
 VERSION = 0.80.0
 RELEASE:= v$(VERSION)
-GO_REL  = 1.14.14
+GO_REL  = 1.14.15
 ifeq ($(origin DRIVER), undefined)
   ifneq ($(shell which podman 2>/dev/null || echo 0), 0)
     DRIVER := $(shell which podman)
