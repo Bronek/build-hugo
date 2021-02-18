@@ -1,5 +1,5 @@
 ARG GO_REL
-FROM golang:${GO_REL}-stretch AS builder
+FROM golang:${GO_REL}-buster AS builder
 
 WORKDIR /work
 ARG RELEASE
