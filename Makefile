@@ -1,5 +1,5 @@
 # Note, 'v' version prefix added below
-VERSION = 0.103.1
+VERSION = 0.104.0
 RELEASE:= v$(VERSION)
 GO_REL  = 1.18.6
 ifeq ($(origin DRIVER), undefined)
